@@ -1,0 +1,42 @@
+FUNCTION dot_product(v1,v2: ARRAY_OF INTEGER) : INTEGER
+VAR
+    ps,y: INTEGER;
+BEGIN
+    ps:=0;
+    FOR y FROM 0 TO (v1.length)-1 DO
+        ps:= ps + (v1[y]*v2[y])
+    END_FOR
+    RETURN ps ;
+END
+
+ALGORITHM dot_product_fuction
+VAR
+    v1,v2: ARRAY_OF INTEGER[10]:
+    x,i,j,res,n : INTEGER ;
+BEGIN
+    Write("insert the number of pairs of vectors : ");
+    Read(n);
+    FOR j FROM 0 TO n DO
+        Write("insert victors length : ");
+        Read(x);
+
+        Write("insert first victor values : ");
+        FOR i FROM 0 TO x DO
+            Read(v1[i]);
+        END_FOR
+
+        Write("insert second victor values : ");
+        FOR i FROM 0 TO x DO
+            Read(v2[i]);
+        END_FOR
+
+        res := dot_product(v1,v2);
+
+        IF (res=0) THEN
+            Write("This two vectors are ORTHOGONAL")
+        ELSE
+            Write("This two vectors are NOT ORTHOGONAL")
+        END_IF
+    END_FOR
+
+END
